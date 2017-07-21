@@ -157,8 +157,8 @@ enfermedad_sintoma(escoliosis):-
 enfermedad_sintoma(gastritis):-
 
 				sintoma('malestar estomacal'),
-        sintoma('ardor de estomago'),
-        sintoma(nauseas),
+        			sintoma('ardor de estomago'),
+       				sintoma(nauseas),
 				sintoma(vomitos),
 				sintoma(dolor),
 				sintoma(eructos),
