@@ -108,7 +108,7 @@ enfermedad_sintoma(conjuntivitis):-
 
 enfermedad_sintoma(colera):-
 
-				sintoma(diarrea_abundante),
+				sintoma('diarrea abundante'),
 				sintoma(nauseas),
 				sintoma(vomitos),
 				sintoma('calambres musculares'),
@@ -118,7 +118,7 @@ enfermedad_sintoma(colera):-
 
 enfermedad_sintoma(dengue):-
 
-				sintoma(fiebre_alta),
+				sintoma('fiebre alta'),
 				sintoma('dolor de cabeza'),
 				sintoma('dolor en los ojos'),
 				sintoma('dolores articulares'),
@@ -128,7 +128,7 @@ enfermedad_sintoma(dengue):-
 		
 enfermedad_sintoma(diabetes):-
 
-				sintoma(vision_borrosa),
+				sintoma('vision borrosa'),
 				sintoma('aumento o perdida de peso'),
 				sintoma('erupciones cutaneas'),
 				sintoma('adormecimiento de pies'),
