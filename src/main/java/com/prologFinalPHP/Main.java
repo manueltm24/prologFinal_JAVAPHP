@@ -16,6 +16,7 @@ import java.sql.SQLException;
  */
 public class Main extends   Application {
 
+    static Stage stage;
 
     public static void main(String[] args) throws SQLException {
 
@@ -26,15 +27,16 @@ public class Main extends   Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
+            stage=primaryStage;
 
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/inicio.fxml"));
 
             //Propiedades de la ventana principal
-            primaryStage.setTitle("Ventana Principal"); //Titutlo de la Ventana
-            primaryStage.setMaximized(false);
-            primaryStage.setResizable(false);
-            primaryStage.setScene(new Scene(root));
-            primaryStage.show();
+            stage.setTitle("Ventana Principal"); //Titutlo de la Ventana
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (IOException e) {
             System.out.println("ERROR CARGAR VENTANA");
             e.printStackTrace();

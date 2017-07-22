@@ -95,11 +95,12 @@ public class InicioControladora  {
         try {
 
             Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/salirRepetir.fxml"));
-            Stage stage = new Stage();
+            Main.stage.close();
+            Main.stage = new Stage();
             //Propiedades de la ventana principal
-            stage.setTitle("Ventana "); //Titutlo de la Ventana
-            stage.setScene(new Scene(root1));
-            stage.show();
+            Main.stage.setTitle("Ventana "); //Titutlo de la Ventana
+            Main.stage.setScene(new Scene(root1));
+            Main.stage.show();
         } catch (IOException e) {
             System.out.println("ERROR CARGAR VENTANA");
             e.printStackTrace();
