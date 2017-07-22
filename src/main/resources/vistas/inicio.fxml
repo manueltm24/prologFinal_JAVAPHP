@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prologFinalPHP.InicioControladora">
+   <children>
+      <Pane layoutX="0.0" layoutY="0.0" prefHeight="236.0" prefWidth="600.0">
+         <children>
+            <TitledPane animated="false" layoutX="2.0" layoutY="-4.0" prefHeight="243.0" prefWidth="600.0" text="Sistema Experto  - Diagnostico de enfermedades" textOverrun="CLIP">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="600.0" styleClass="">
+                     <children>
+                        <TextArea fx:id="preguntasText" editable="false" layoutX="119.0" layoutY="65.0" prefHeight="38.0" prefWidth="359.0" wrapText="true" />
+                        <Label layoutX="93.0" layoutY="21.0" text="" />
+                        <Button layoutX="200.0" layoutY="116.0" mnemonicParsing="false" onAction="#buttonSi" prefWidth="54.0" text="SI" />
+                        <Button layoutX="329.0" layoutY="116.0" mnemonicParsing="false" onAction="#buttonNo" prefWidth="62.0" text="NO" />
+                        <Label layoutX="119.0" layoutY="29.0" text="Responda las siguientes preguntas respecto a los sintomas que padece:" />
+                        <Button layoutX="514.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+                     </children>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

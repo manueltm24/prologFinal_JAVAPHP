@@ -1,76 +1,85 @@
 package com.prologFinalPHP;
 
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by MT on 7/21/2017.
  */
-public class Main{
-    public static List<String> listadoEnfermedades=new ArrayList<>();
-    public static List<String> enfermedadesUsuario=new ArrayList<>();
+public class Main extends   Application {
 
 
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) throws SQLException {
 
         PrologManager.getInstance().consultarEnfermedades();
-        prologFinal();
-
-
-        for(String enfermedad: enfermedadesUsuario){
-
-            System.out.println("\n\nUSTED TIENE LAS SIGUIENTES ENFERMEDADES: \n");
-            System.out.println(enfermedad);
-        }
-
-
-
-
-
-
-
+        Application.launch(args);
     }
 
-    public static void prologFinal() throws Exception{
-        PreguntarEnfermedades:
-        for(int i=0; i<listadoEnfermedades.size();i++){
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        try {
 
-            URL url = new URL("http://localhost/prologFinal?funcion=preguntas&enfermedad="+listadoEnfermedades.get(i));
-            String preguntasEnfermedades = "";
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
-                for (String line; (line = reader.readLine()) != null;) {
-                    preguntasEnfermedades += line;
-                }
-            }
-            //System.out.println(preguntasEnfermedades);
-            List<String> items = Arrays.asList(preguntasEnfermedades.split("\\s*,\\s*"));
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/inicio.fxml"));
 
-            PreguntasSintomas:
-            for (int j =0;j<items.size();j++) {
-                System.out.println(items.get(j)+"\n");  // LABEL!
-                Scanner sc =new Scanner(System.in);  //BOTTONN
-                String Respuesta = sc.nextLine();
-
-                if(!(Respuesta.equals("S")||Respuesta.equals("s"))){
-                    break PreguntasSintomas;
-                }
-                if(j==items.size()-1){
-                    enfermedadesUsuario.add(listadoEnfermedades.get(i));
-
-
-                }
-
-
-
-            }
-
+            //Propiedades de la ventana principal
+            primaryStage.setTitle("Ventana Principal"); //Titutlo de la Ventana
+            primaryStage.setMaximized(false);
+            primaryStage.setResizable(false);
+            primaryStage.setScene(new Scene(root));
+            primaryStage.show();
+        } catch (IOException e) {
+            System.out.println("ERROR CARGAR VENTANA");
+            e.printStackTrace();
+            return;
         }
     }
+
+
+
+
+
+
+//    public static void prologFinal() throws Exception{
+//        PreguntarEnfermedades:
+//        for(int i=0; i<listadoEnfermedades.size();i++){
+//
+//            URL url = new URL("http://localhost/prologFinal?funcion=preguntas&enfermedad="+listadoEnfermedades.get(i));
+//            String preguntasEnfermedades = "";
+//            try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
+//                for (String line; (line = reader.readLine()) != null;) {
+//                    preguntasEnfermedades += line;
+//                }
+//            }
+//            //System.out.println(preguntasEnfermedades);
+//            List<String> items = Arrays.asList(preguntasEnfermedades.split("\\s*,\\s*"));
+//
+//            PreguntasSintomas:
+//            for (int j =0;j<items.size();j++) {
+//                System.out.println(items.get(j)+"\n");  // LABEL!
+//                Scanner sc =new Scanner(System.in);  //BOTTONN
+//                String Respuesta = sc.nextLine();
+//
+//                if(!(Respuesta.equals("S")||Respuesta.equals("s"))){
+//                    break PreguntasSintomas;
+//                }
+//                if(j==items.size()-1){
+//                    enfermedadesUsuario.add(listadoEnfermedades.get(i));
+//
+//
+//                }
+//
+//
+//
+//            }
+//
+//        }
+//    }
 }

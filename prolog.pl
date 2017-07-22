@@ -3,7 +3,7 @@
 %DECLARACION DE ENFERMEDADES
 enfermedad(alergia).
 enfermedad(alzheimer).
-enfermedad('anemia severa').
+%enfermedad('anemia severa').
 enfermedad(anorexia).
 enfermedad(apendicitis).
 enfermedad(bronquiolitis).

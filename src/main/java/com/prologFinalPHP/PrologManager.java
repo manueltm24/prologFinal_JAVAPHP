@@ -7,13 +7,13 @@ import org.jpl7.*;
 import java.util.*;
 import java.util.List;
 
-
-
 /**
  * Created by MT on 7/17/2017.
  */
+
+
 public class PrologManager {
-        private static PrologManager _instance;
+    private static PrologManager _instance;
 
 
     public PrologManager(){
@@ -42,7 +42,7 @@ public class PrologManager {
         System.out.println(q1.goal());
         while ( q1.hasMoreSolutions() ){
             System.out.println(q1.nextSolution().get("X").toString());
-            Main.listadoEnfermedades.add(q1.nextSolution().get("X").toString());
+            InicioControladora.listadoEnfermedades.add(q1.nextSolution().get("X").toString());
 
             //enfermedades.add(q1.nextSolution().get("X").toString());
             //System.out.println( "Y = " + q1.nextSolution().get("X"));

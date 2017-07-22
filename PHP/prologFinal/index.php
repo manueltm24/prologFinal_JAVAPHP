@@ -21,7 +21,7 @@ switch($_GET['funcion']) {
  function preguntas($nombreEnfermedad){
 	//echo $nombreEnfermedad;
 	//$preguntas = 'C:\progra~2\swipl\bin\swipl.exe -s C:\Users\MT\IdeaProjects\prologFinal\prolog.pl -g test,halt';
-    $command= `swipl -s C:\Users\MT\IdeaProjects\prologFinalPHP\prolog.pl -g "enfermedad_sintomas($nombreEnfermedad). -t 'halt'"`;
+    $command= `swipl -s C:\Users\MT\IdeaProjects\prologFinalPHP\prolog.pl -g "enfermedad_sintoma($nombreEnfermedad). -t 'halt'"`;
 	exec($command, $preguntas);
 	echo $command;
 	
