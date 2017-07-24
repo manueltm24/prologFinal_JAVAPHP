@@ -50,8 +50,8 @@ public class InicioControladora  {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);
-            System.out.println("Usted tiene las siguientes enfermedades: " + enfermedades);
-            alert.setContentText("Usted tiene las siguientes enfermedades: " + enfermedades);
+            System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
+            alert.setContentText("Usted puede tener la siguiente enfermedad: " + enfermedades);
 
             alert.showAndWait();
             return;
@@ -76,7 +76,7 @@ public class InicioControladora  {
             if(listadoEnfermedades.size()==contadorEnfermedades){
                 String enfermedades = String.join(",", enfermedadesUsuario);
 
-                System.out.println("Usted tiene las siguientes enfermedades: " + enfermedades);
+                System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
                 return;
 
             }
