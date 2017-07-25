@@ -1,17 +1,18 @@
 :-dynamic enfermedades/1.
 
 %DECLARACION DE ENFERMEDADES
+
 enfermedad(alergia).
+enfermedad(chikungunya).
+enfermedad(conjuntivitis).
+enfermedad(dengue).
 enfermedad(alzheimer).
-%enfermedad('anemia severa').
+enfermedad(anemia_severa).
 enfermedad(anorexia).
 enfermedad(apendicitis).
 enfermedad(bronquiolitis).
-enfermedad(chikungunya).
 enfermedad(cistitis).
-enfermedad(conjuntivitis).
 enfermedad(colera).
-enfermedad(dengue).
 enfermedad(diabetes).
 enfermedad(embarazo).
 enfermedad(escoliosis).
@@ -32,46 +33,6 @@ enfermedad_sintoma(alergia):-
 				sintoma('picor en la garganta/boca/labios'),
 				sintoma('inflamación de boca/vías respiratorias').
 
-enfermedad_sintoma(alzheimer):-
-
-				sintoma('perdida de memoria'),
-				sintoma('dificultad para pensar'),
-				sintoma('dificultad para hablar'),
-				sintoma('dificultad para leer'),
-				sintoma('dificultad visual'),
-				sintoma(confusion),
-				sintoma(desorentacion).
-
-
-enfermedad_sintoma('anemia severa'):-
-
-				sintoma('falta de energia'),
-				sintoma(debilidad),
-				sintoma(mareos),
-				sintoma(palpitaciones),
-				sintoma(palidez),
-				sintoma('piel amarilla'),
-				sintoma('perdida de vision').
-
-
-enfermedad_sintoma(anorexia):-
-
-				sintoma('falta de energia'),
-				sintoma(debilidad),
-				sintoma('piel amarilla'),
-				sintoma('piel reseca'),
-				sintoma(mareos),
-				sintoma(desmayos),
-				sintoma(anemia),
-				sintoma('perdida de peso drastico').
-
-enfermedad_sintoma(apendicitis):-
-
-				sintoma('dolor abdominal'),
-				sintoma(vomitos),
-				sintoma(fiebre),
-				sintoma('colicos estomacales'),
-				sintoma(calambres).
 
 
 enfermedad_sintoma(bronquiolitis):-
@@ -83,6 +44,12 @@ enfermedad_sintoma(bronquiolitis):-
 				sintoma('dolor en el torax').
 
 
+enfermedad_sintoma(conjuntivitis):-
+
+				sintoma(lagrimeo),
+				sintoma('picor en los ojos'),
+				sintoma('ojos rojos').
+
 enfermedad_sintoma(chikungunya):-
 
 				sintoma(fiebre),
@@ -92,19 +59,41 @@ enfermedad_sintoma(chikungunya):-
 				sintoma('dolores articulares').
 
 
+enfermedad_sintoma(alzheimer):-
+
+				sintoma('perdida de memoria'),
+				sintoma('dificultad para pensar'),
+				sintoma('dificultad para hablar'),
+				sintoma('dificultad para leer'),
+				sintoma('dificultad visual'),
+				sintoma(confusion),
+				sintoma(desorentacion).
+
+
+enfermedad_sintoma(anemia_severa):-
+
+				sintoma('falta de energia'),
+				sintoma(debilidad),
+				sintoma(mareos),
+				sintoma(palpitaciones),
+				sintoma(palidez),
+				sintoma('piel amarilla'),
+				sintoma('perdida de vision').
+
+enfermedad_sintoma(apendicitis):-
+
+				sintoma('dolor abdominal'),
+				sintoma(vomitos),
+				sintoma(fiebre),
+				sintoma('colicos estomacales'),
+				sintoma(calambres).
+
 enfermedad_sintoma(cistitis):-
 
 				sintoma('dolor de espalda'),
 				sintoma('deseos de orinar frecuente'),
 				sintoma('dolor en el vientre'),
 				sintoma('ausencia de orina').
-
-enfermedad_sintoma(conjuntivitis):-
-
-				sintoma(lagrimeo),
-				sintoma('picor en los ojos'),
-				sintoma('ojos rojos').
-
 
 enfermedad_sintoma(colera):-
 
@@ -118,13 +107,14 @@ enfermedad_sintoma(colera):-
 
 enfermedad_sintoma(dengue):-
 
-				sintoma('fiebre alta'),
+
 				sintoma('dolor de cabeza'),
 				sintoma('dolor en los ojos'),
 				sintoma('dolores articulares'),
 				sintoma(debilidad),
 				sintoma(nauseas),
-				sintoma('defensa baja').
+				sintoma('defensa baja'),
+				sintoma('fiebre alta').
 
 enfermedad_sintoma(diabetes):-
 
@@ -177,7 +167,7 @@ enfermedad_sintoma(gripe):-
 
 enfermedad_sintoma(leucemia):-
 
-				sintoma(fiebre),
+
 				sintoma(escalofrios),
 				sintoma(anemia),
 				sintoma(palidez),
@@ -208,18 +198,17 @@ enfermedad_sintoma(migrana):-
 enfermedad_sintoma(neumonia):-
 
 				sintoma(escalofrio),
-				sintoma(fiebre),
 				sintoma(tos),
 				sintoma('dolor de pecho'),
 				sintoma('dolor al respirar'),
-				sintoma('falta de oxigeno').
+				sintoma('falta de oxigeno'),
+				sintoma(fiebre).
 
 %Descripcion de las enfermedades
 
 :- discontiguous descripcion/2.
 
 descripcion_enfermedad(X):-descripcion(X,Y),write(Y).
-
 
 descripcion(alergia,'Es un conjunto de alteraciones de carácter respiratorio, nervioso o eruptivo que se producen en el sistema
 inmunológico por una extremada sensibilidad del organismo a ciertas sustancias a las que ha sido expuesto, y que en condiciones normales no causan esas alteraciones.').
@@ -298,8 +287,11 @@ por la presencia de fiebre alta, escalofríos, dolor intenso en el costado afect
 
 %Reglas para ir preguntando por los sintomas
 sintoma(X):-pregunta('Usted tiene',X).
-pregunta(Incognita,X):-write(Incognita),write(' '),write(X),write(' '),write('? s/n,').
+pregunta(Incognita,X):-write(Incognita),write(' '),write(X),write(' '),write('? si/no,').
 
 insertarEnfermedad(X):-assert(enfermedades(X)).
+
+
+
 
 
