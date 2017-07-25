@@ -2,7 +2,11 @@ package com.prologFinalPHP;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -37,8 +41,21 @@ public class RespuestaControladora {
 
     @FXML
     void salir(javafx.event.ActionEvent event) {
+        try {
 
-        System.exit(0);
+            Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/salirRepetir.fxml"));
+//            Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/respuesta.fxml"));
+            Main.stage.close();
+            Main.stage = new Stage();
+            //Propiedades de la ventana principal
+            Main.stage.setTitle("Ventana "); //Titutlo de la Ventana
+            Main.stage.setScene(new Scene(root1));
+            Main.stage.show();
+        } catch (IOException e) {
+            System.out.println("ERROR CARGAR VENTANA");
+            e.printStackTrace();
+            return;
+        }
     }
 
 

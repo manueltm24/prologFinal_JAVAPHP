@@ -47,13 +47,16 @@ public class InicioControladora  {
         if(listadoEnfermedades.size()==contadorEnfermedades){
             String enfermedades = String.join(",", enfermedadesUsuario);
 
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Information Dialog");
-//            alert.setHeaderText(null);
-//            System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
-//            alert.setContentText("Usted puede tener la siguiente enfermedad: " + enfermedades);
+//            if(enfermedadesUsuario==null){
+//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                alert.setTitle("Information Dialog");
+//                alert.setHeaderText(null);
+//                System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
+//                alert.setContentText("Usted puede tener la siguiente enfermedad: " + enfermedades);
 //
-//            alert.showAndWait();
+//                alert.showAndWait();
+//            }
+
 
             try {
 

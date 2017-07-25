@@ -34,7 +34,7 @@
                                     <ListView fx:id="descripciones" prefHeight="170.0" prefWidth="748.0" />
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" onAction="#salir" text="SALIR">
+                              <Button mnemonicParsing="false" onAction="#salir" text="SALIR / REPETIR">
                                  <VBox.margin>
                                     <Insets left="810.0" top="10.0" />
                                  </VBox.margin>

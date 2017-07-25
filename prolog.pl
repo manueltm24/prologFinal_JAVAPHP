@@ -6,10 +6,10 @@ enfermedad(alergia).
 enfermedad(chikungunya).
 enfermedad(conjuntivitis).
 enfermedad(dengue).
-enfermedad(alzheimer).
-enfermedad(anemia_severa).
-enfermedad(anorexia).
-enfermedad(apendicitis).
+%%enfermedad(alzheimer).
+%%enfermedad(anemia_severa).
+%%enfermedad(anorexia).
+%%enfermedad(apendicitis).
 enfermedad(bronquiolitis).
 enfermedad(cistitis).
 enfermedad(colera).
@@ -80,13 +80,13 @@ enfermedad_sintoma(anemia_severa):-
 				sintoma('piel amarilla'),
 				sintoma('perdida de vision').
 
-enfermedad_sintoma(apendicitis):-
-
-				sintoma('dolor abdominal'),
-				sintoma(vomitos),
-				sintoma(fiebre),
-				sintoma('colicos estomacales'),
-				sintoma(calambres).
+%%enfermedad_sintoma(apendicitis):-
+%%
+%%				sintoma('dolor abdominal'),
+%%				sintoma(vomitos),
+%%				sintoma(fiebre),
+%%				sintoma('colicos estomacales'),
+%%				sintoma(calambres).
 
 enfermedad_sintoma(cistitis):-
 
