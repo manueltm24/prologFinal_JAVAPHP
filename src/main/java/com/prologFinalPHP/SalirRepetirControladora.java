@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -27,8 +28,10 @@ public class SalirRepetirControladora {
             Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/inicio.fxml"));
             Main.stage.close();
             Main.stage = new Stage();
+
             //Propiedades de la ventana principal
             Main.stage.setTitle("Ventana "); //Titutlo de la Ventana
+            Main.stage.initStyle(StageStyle.UNDECORATED);
             Main.stage.setScene(new Scene(root1));
             Main.stage.show();
         } catch (IOException e) {

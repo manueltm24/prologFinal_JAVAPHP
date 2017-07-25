@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -35,6 +37,7 @@ public class Main extends   Application {
             stage.setTitle("Ventana Principal"); //Titutlo de la Ventana
             stage.setMaximized(false);
             stage.setResizable(false);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
