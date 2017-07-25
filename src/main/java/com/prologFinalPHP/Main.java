@@ -24,6 +24,7 @@ public class Main extends   Application {
 
         PrologManager.getInstance().consultarEnfermedades();
         Application.launch(args);
+
     }
 
     @Override

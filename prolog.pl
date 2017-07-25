@@ -31,7 +31,7 @@ enfermedad_sintoma(alergia):-
 				sintoma('ardor en la nariz'),
 				sintoma('picor en la garganta/boca/labios'),
 				sintoma('inflamación de boca/vías respiratorias').
-			
+
 enfermedad_sintoma(alzheimer):-
 
 				sintoma('perdida de memoria'),
@@ -41,7 +41,7 @@ enfermedad_sintoma(alzheimer):-
 				sintoma('dificultad visual'),
 				sintoma(confusion),
 				sintoma(desorentacion).
-				
+
 
 enfermedad_sintoma('anemia severa'):-
 
@@ -52,10 +52,10 @@ enfermedad_sintoma('anemia severa'):-
 				sintoma(palidez),
 				sintoma('piel amarilla'),
 				sintoma('perdida de vision').
-		
+
 
 enfermedad_sintoma(anorexia):-
-		
+
 				sintoma('falta de energia'),
 				sintoma(debilidad),
 				sintoma('piel amarilla'),
@@ -72,7 +72,7 @@ enfermedad_sintoma(apendicitis):-
 				sintoma(fiebre),
 				sintoma('colicos estomacales'),
 				sintoma(calambres).
-				
+
 
 enfermedad_sintoma(bronquiolitis):-
 
@@ -82,7 +82,7 @@ enfermedad_sintoma(bronquiolitis):-
 				sintoma(somnolencia),
 				sintoma('dolor en el torax').
 
-				
+
 enfermedad_sintoma(chikungunya):-
 
 				sintoma(fiebre),
@@ -90,7 +90,7 @@ enfermedad_sintoma(chikungunya):-
 				sintoma('dolores musculares'),
 				sintoma('dolor de cabeza'),
 				sintoma('dolores articulares').
-	
+
 
 enfermedad_sintoma(cistitis):-
 
@@ -104,7 +104,7 @@ enfermedad_sintoma(conjuntivitis):-
 				sintoma(lagrimeo),
 				sintoma('picor en los ojos'),
 				sintoma('ojos rojos').
-				
+
 
 enfermedad_sintoma(colera):-
 
@@ -114,7 +114,7 @@ enfermedad_sintoma(colera):-
 				sintoma('calambres musculares'),
 				sintoma('defensa baja'),
 				sintoma(desidratacion).
-			
+
 
 enfermedad_sintoma(dengue):-
 
@@ -125,7 +125,7 @@ enfermedad_sintoma(dengue):-
 				sintoma(debilidad),
 				sintoma(nauseas),
 				sintoma('defensa baja').
-		
+
 enfermedad_sintoma(diabetes):-
 
 				sintoma('vision borrosa'),
@@ -157,15 +157,15 @@ enfermedad_sintoma(escoliosis):-
 enfermedad_sintoma(gastritis):-
 
 				sintoma('malestar estomacal'),
-        			sintoma('ardor de estomago'),
-       				sintoma(nauseas),
+				sintoma('ardor de estomago'),
+				sintoma(nauseas),
 				sintoma(vomitos),
 				sintoma(dolor),
 				sintoma(eructos),
 				sintoma('hinchazon abdominal'),
 				sintoma(ansiedad),
 				sintoma(diarrea).
-			
+
 
 enfermedad_sintoma(gripe):-
 
@@ -173,7 +173,7 @@ enfermedad_sintoma(gripe):-
 				sintoma(tos),
 				sintoma(mocos),
 				sintoma(fiebre).
-				
+
 
 enfermedad_sintoma(leucemia):-
 
@@ -186,13 +186,13 @@ enfermedad_sintoma(leucemia):-
 				sintoma('perdida de peso'),
 				sintoma('dolor en articulaciones'),
 				sintoma('encias sangrantes').
-				
+
 enfermedad_sintoma(miopia):-
 
 				sintoma('buena vision cercana'),
 				sintoma('dificultad para ver de lejos').
-				
-				
+
+
 enfermedad_sintoma(migrana):-
 
 				sintoma('dolor de cabeza'),
@@ -202,8 +202,8 @@ enfermedad_sintoma(migrana):-
 				sintoma(vomitos),
 				sintoma(debilidad),
 				sintoma('sencibilidad a la luz').
-			
-				
+
+
 
 enfermedad_sintoma(neumonia):-
 
@@ -213,10 +213,13 @@ enfermedad_sintoma(neumonia):-
 				sintoma('dolor de pecho'),
 				sintoma('dolor al respirar'),
 				sintoma('falta de oxigeno').
-			
+
 %Descripcion de las enfermedades
 
 :- discontiguous descripcion/2.
+
+descripcion_enfermedad(X):-descripcion(X,Y),write(Y).
+
 
 descripcion(alergia,'Es un conjunto de alteraciones de carácter respiratorio, nervioso o eruptivo que se producen en el sistema
 inmunológico por una extremada sensibilidad del organismo a ciertas sustancias a las que ha sido expuesto, y que en condiciones normales no causan esas alteraciones.').
@@ -291,12 +294,12 @@ se debe a una curvatura excesiva del cristalino que hace que las imágenes de lo
 descripcion(neumonia,'Es una inflamación de los pulmones, causada por la infección de un virus o una bacteria, que se caracteriza
 por la presencia de fiebre alta, escalofríos, dolor intenso en el costado afectado del tórax, tos y expectoración.').
 
-	
-	
+
+
 %Reglas para ir preguntando por los sintomas
-sintoma(X):-pregunta('Usted tiene',X). 
+sintoma(X):-pregunta('Usted tiene',X).
 pregunta(Incognita,X):-write(Incognita),write(' '),write(X),write(' '),write('? s/n,').
 
-insertarEnfermedad(X):-assert(enfermedad(X)).
+insertarEnfermedad(X):-assert(enfermedades(X)).
 
 

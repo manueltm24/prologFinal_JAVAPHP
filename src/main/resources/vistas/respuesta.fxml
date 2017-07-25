@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prologFinalPHP.RespuestaControladora">
+   <children>
+      <Pane layoutX="0.0" layoutY="0.0" prefHeight="236.0" prefWidth="901.0">
+         <children>
+            <TitledPane animated="false" layoutX="2.0" layoutY="-4.0" prefHeight="243.0" prefWidth="901.0" text="Sistema Experto  - Diagnostico de enfermedades" textOverrun="CLIP">
+               <content>
+                  <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="425.0" styleClass="">
+                     <children>
+                        <VBox prefHeight="212.0" prefWidth="894.0">
+                           <children>
+                              <HBox prefHeight="26.0" prefWidth="894.0">
+                                 <children>
+                                    <Label text="Enfermedades" />
+                                    <Label text="Descripciones">
+                                       <padding>
+                                          <Insets left="80.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="188.0" prefWidth="291.0">
+                                 <children>
+                                    <ListView fx:id="enfermedades" prefHeight="155.0" prefWidth="147.0" />
+                                    <ListView fx:id="descripciones" prefHeight="170.0" prefWidth="748.0" />
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#salir" text="SALIR">
+                                 <VBox.margin>
+                                    <Insets left="810.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <!--<Button layoutX="514.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />-->
+                     </children>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

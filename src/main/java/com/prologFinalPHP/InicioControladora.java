@@ -47,13 +47,31 @@ public class InicioControladora  {
         if(listadoEnfermedades.size()==contadorEnfermedades){
             String enfermedades = String.join(",", enfermedadesUsuario);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
-            alert.setContentText("Usted puede tener la siguiente enfermedad: " + enfermedades);
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Information Dialog");
+//            alert.setHeaderText(null);
+//            System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
+//            alert.setContentText("Usted puede tener la siguiente enfermedad: " + enfermedades);
+//
+//            alert.showAndWait();
 
-            alert.showAndWait();
+            try {
+
+                Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/respuesta.fxml"));
+//            Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/respuesta.fxml"));
+                Main.stage.close();
+                Main.stage = new Stage();
+                //Propiedades de la ventana principal
+                Main.stage.setTitle("Ventana "); //Titutlo de la Ventana
+                Main.stage.setScene(new Scene(root1));
+                Main.stage.show();
+            } catch (IOException e) {
+                System.out.println("ERROR CARGAR VENTANA");
+                e.printStackTrace();
+                return;
+            }
+
+            //CambiarVentana("respuesta.fxml");
             return;
 
         }
@@ -76,6 +94,7 @@ public class InicioControladora  {
             if(listadoEnfermedades.size()==contadorEnfermedades){
                 String enfermedades = String.join(",", enfermedadesUsuario);
 
+
                 System.out.println("Usted puede tener la siguiente enfermedad: " + enfermedades);
                 return;
 
@@ -95,6 +114,7 @@ public class InicioControladora  {
         try {
 
             Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/salirRepetir.fxml"));
+//            Parent root1 = FXMLLoader.load(getClass().getResource("/vistas/respuesta.fxml"));
             Main.stage.close();
             Main.stage = new Stage();
             //Propiedades de la ventana principal
